@@ -18,7 +18,7 @@ def click_handler(event):
     elif value == "=":
         try:
             safe_expression = expression.replace("x", "*")
-            result = str(eval(safe_expression))
+            result = str(round(eval(safe_expression), 5))
             label.config(text=result)
             expression = result 
         except Exception:
