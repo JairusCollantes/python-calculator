@@ -32,7 +32,7 @@ def click_handler(event):
 main = tk.Tk()
 main.title("Calculator")
 main.config(bg="#FFB6D9")
-main.geometry("271x342")
+main.geometry("311x342")
 main.resizable(False, False)
 
 
@@ -44,7 +44,7 @@ style.map("button.TButton", background=[("active", "#9B4F74")], foreground=[("ac
 style.configure("label.TLabel", background="#FFB6D9", foreground="#000", font=("TkDefaultFont", 30), anchor="e")
 
 buttons_data = [
-    ("7", 27, 111), ("8", 83, 111), ("9", 140, 111), ("+", 196, 111),
+    ("7", 27, 111), ("8", 83, 111), ("9", 140, 111), ("+", 196, 111), ("C", 252, 111),
     ("4", 27, 167), ("5", 83, 167), ("6", 140, 167), ("-", 196, 167),
     ("1", 27, 223), ("2", 83, 223), ("3", 140, 223), ("/", 196, 223),
     (".", 27, 279), ("0", 83, 279), ("=", 140, 279), ("x", 196, 279),
