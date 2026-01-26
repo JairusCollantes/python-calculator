@@ -15,9 +15,15 @@ def click_handler(event):
     if value == "C":
         expression = ""
         label.config(text="0")
+    elif value == "↵":
+        expression = expression[:-1]
+        if expression == "":
+            label.config(text="0")
+        else:
+            label.config(text=expression)
     elif value == "=":
         try:
-            safe_expression = expression.replace("x", "*")
+            safe_expression = expression.replace("x", "*").replace("^", "**")
             result = str(round(eval(safe_expression), 5))
             label.config(text=result)
             expression = result 
@@ -45,9 +51,9 @@ style.configure("label.TLabel", background="#FFB6D9", foreground="#000", font=("
 
 buttons_data = [
     ("7", 27, 111), ("8", 83, 111), ("9", 140, 111), ("+", 196, 111), ("C", 252, 111),
-    ("4", 27, 167), ("5", 83, 167), ("6", 140, 167), ("-", 196, 167),
-    ("1", 27, 223), ("2", 83, 223), ("3", 140, 223), ("/", 196, 223),
-    (".", 27, 279), ("0", 83, 279), ("=", 140, 279), ("x", 196, 279),
+    ("4", 27, 167), ("5", 83, 167), ("6", 140, 167), ("-", 196, 167), ("↵", 252, 167),
+    ("1", 27, 223), ("2", 83, 223), ("3", 140, 223), ("/", 196, 223), ("^", 252, 223),
+    (".", 27, 279), ("0", 83, 279), ("=", 140, 279), ("x", 196, 279), 
 ]
 
 for text, x, y in buttons_data:
